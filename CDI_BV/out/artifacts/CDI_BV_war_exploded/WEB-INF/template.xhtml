@@ -5,21 +5,23 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-    <title>JSF</title>
-</h:head>
-<body>
+<head>
+    <title>Bank Protal</title>
+</head>
 <div id="header">
     <ui:insert name="header">
-        <h:graphicImage name="logo_bstu_v.png" value="#{resource['logo_bstu_v.png']}"/>
-        <h1>Добро пожаловать</h1>
+        <h:graphicImage name="logo_bstu_v.png" value="#{resource['logo_bstu_v.png']}" style="float: left"/><br/>
+        <h1>Welcome to bank</h1><br/>
     </ui:insert>
 </div>
 <div id="content">
-    <ui:insert name="content">The content of bank </ui:insert>
+    <ui:insert name="content">
+        Bank content
+    </ui:insert>
 </div>
 <div id="footer">
-    <ui:insert name="footer">Copyright ©2017, All rights reserved</ui:insert>
+    <ui:insert name="footer">
+        Copyright ©2017, All rights reserved
+    </ui:insert>
 </div>
-</body>
 </html>
