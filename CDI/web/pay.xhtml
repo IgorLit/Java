@@ -7,14 +7,9 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <ui:composition template="WEB-INF/template.xhtml">
     <ui:define name="content">
-        <h:form>
-            <h3>
-            <h:outputText value="#{User.login}" /> , Thank you for payment with card number
-            <h:outputText value="#{User.card.number}"/><br/> Amount of payment:
-            <h:outputText value="#{User.recipient.amount}"/> rub, <h:outputText value="#{User.recipient.amount}" converter="DollarsConverter"/> <br/>
-            <h:commandButton action="bank?faces-redirect=true" value="Return to the bank"/>
-            </h3>
-        </h:form>
+        <h:outputText value="#{cardController.login}"/>, Спасибо, что оплатили счет на сумму
+        <h:outputText value="#{cardController.sum}" /> руб. (        <h:outputText value="${cardController.sum}" converter="ConverterE"/>
+        )<br/><br/>
     </ui:define>
 </ui:composition>
 </html>

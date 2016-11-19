@@ -4,33 +4,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+<composite:interface>
+    <composite:attribute name="name"/>
+</composite:interface>
 <ui:composition template="WEB-INF/template.xhtml">
-        <ui:define name="content">
-            <h4>
-            <h:form>
-                <h:outputText value="Name:"/>
-                <h:outputText value="#{User.login}"/><br/>
-                <h:outputText value="Card number:"/>
-                <h:outputText value="#{User.card.number}"/><br/>
-                <h:outputText value="Amount:"/>
-                <h:outputText value="#{User.card.amount}"/><br/>
-                <h:outputText value="Card expiry date:"/>
-                <h:outputText value="#{User.card.cardExpiryDate}"/><br/><br/>
-            </h:form>
-            </h4>
-           <h:form>
-                <h:outputText value="Enter recipient card number"/><br/>
-                <h:inputText value="#{User.recipient.number}" required="true"  title="id" id="cardId">
-                    <f:validator validatorId="CardValidator"/>
-                </h:inputText>
-                <h:message for="cardId" style="color: red"/>
-                <br/><br/>
-                <h:outputText value="Enter amount"/><br/>
-                <h:inputText value="#{User.recipient.amount}" required="true" title="pass" id="password"/><br/><br/>
-                <h:commandLink action="#{User.logout}" style="margin-left:30px" value="logout"/>
-                <h:commandButton action="#{User.pay}" value="PAY" style="margin-left: 20px"/><br/><br/><br/>
-            </h:form>
-        </ui:define>
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid columns="2" border="0">
+            <h:outputText value="Номер карты:"/><br/>
+            <h:inputText value="#{cardController.idCard}" required="true" title="id" id="cardId">
+                <f:validateLength minimum="1"/>
+            </h:inputText> <br/><br/>
+            <h:outputText value="Сумма:"/><br/>
+            <h:inputText name="sum" value="#{cardController.sum}" required="true" title="sum" id="sum">
+                <f:validateLongRange minimum="1" maximum="1000"/>
+                <f:validator validatorId="CardValidator"/>
+            </h:inputText> <br/><br/>
+                <h:message for="sum" style="color: red"/>
+            </h:panelGrid>
+            <h:commandButton action="#{cardController.doPay}" value = "Оплатить" /><br/>
+        </h:form>
+        <h:link value="Вернуться на страницу авторизации" outcome="index.xhtml"/>
+    </ui:define>
 </ui:composition>
 </html>

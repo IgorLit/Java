@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @FacesValidator("CardValidator")
-public class CardValidator  implements Validator{
+public class CardValidator  implements Validator {
     private Pattern pattern;
     private Matcher matcher;
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CDI.iml" filepath="$PROJECT_DIR$/CDI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CDI_BV.iml" filepath="$PROJECT_DIR$/CDI_BV.iml" />
     </modules>
   </component>
 </project>

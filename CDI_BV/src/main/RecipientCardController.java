@@ -1,6 +1,7 @@
 package main;
 
-import javax.faces.bean.*;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "Recipient")
 @SessionScoped

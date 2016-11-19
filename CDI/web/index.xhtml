@@ -5,12 +5,24 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<div style="text-align: center">
-    <h2>Your Personal Area</h2>
-   <h:form>
-      <h:inputText value="#{User.login}" style="margin: 5px" title="Login"/><br></br>
-      <h:inputSecret value="#{User.password}" style="margin: 5px" title="Password"/><br></br><br/>
-      <h:commandButton action="#{User.signIn}" value="Sigh In"/>
-   </h:form>
-</div>
+<h:head>
+   <title>JSF</title>
+</h:head>
+<body>
+<ui:composition template="WEB-INF/template.xhtml">
+    <ui:define name="content">
+        <h:messages style="color: red"/>
+        <h:form>
+            <h:panelGrid columns="2" border="0">
+            <h:outputText value="Логин:"/><br/>
+            <h:inputText value="#{cardController.login}" required="true" title="name" id="name" /> <br/><br/>
+            <h:outputText value="Пароль:"/><br/>
+            <h:inputSecret value="#{cardController.password}" required="true" title="passw" id="passw" /> <br/><br/>
+            </h:panelGrid>
+            <h:commandButton action="#{cardController.doLogin}" value = "Войти" /><br/>
+
+        </h:form>
+    </ui:define>
+</ui:composition>
+</body>
 </html>
