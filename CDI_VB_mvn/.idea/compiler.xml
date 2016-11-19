@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="CDI_BV" />
+        <module name="CDI_VB_mvn" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CDI_BV" target="1.5" />
+      <module name="CDI_VB_mvn" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,9 +1,13 @@
 package main;
 
+import main.Adress.Address;
+import main.Adress.AddressWithCountry;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 
 @ManagedBean(name = "User")
 @SessionScoped
@@ -15,6 +19,16 @@ public class UserController {
     private CardController card;
     @ManagedProperty(value = "#{Recipient}")
     private RecipientCardController recipient;
+    @Inject @AddressWithCountry
+    private Address address;
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public String pay(){
         if(isAuthorized()){
