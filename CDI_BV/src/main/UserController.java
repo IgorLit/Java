@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.validation.constraints.NotNull;
 
 @ManagedBean(name = "User")
 @SessionScoped
@@ -43,7 +44,9 @@ public class UserController {
         return "index?faces-redirect=true";
     }
 
-
+    public String signUp(){
+        return "bank?faces-redirect=true";
+    }
     public String signIn(){
         if(this.login.equals("root")&& this.password==666) {
             this.initCard();

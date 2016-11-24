@@ -12,5 +12,9 @@
       <h:inputSecret value="#{User.password}" style="margin: 5px" title="Password"/><br></br><br/>
       <h:commandButton action="#{User.signIn}" value="Sigh In"/>
    </h:form>
+    <h:form>
+        <h:commandLink action="signup?faces-redirect=true" value="Sign Up"/>
+    </h:form>
+
 </div>
 </html>
