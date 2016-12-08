@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="WEB-INF/template.xhtml">
+    <ui:define name="content">
+    <h:form>
+        <h:selectOneListbox size="8" valueChangeListener="#{Admin.changedCard}" onchange="submit()">
+            <f:selectItems value="#{Admin.debitCards}"/>
+        </h:selectOneListbox><br/>
+    </h:form>
+        <h:form>
+            <h:selectOneListbox size="8" valueChangeListener="#{Admin.changedUser}" onchange="submit()">
+                <f:selectItems value="#{Admin.userControllers}"/>
+            </h:selectOneListbox><br/>
+        </h:form>
+    <h:form>
+        <h:commandButton action="#{Admin.getAddCards}" value="Get Cards"/>
+    </h:form>
+        <h:form>
+            <h:commandButton action="#{Admin.getAllUsers}" value="Get Users"/>
+        </h:form>
+        <h:form>
+            <h:commandButton action="#{Admin.appointCard}" value="Appoit Card"/>
+        </h:form>
+        <h:form>
+            <h:commandLink action="#{Admin.logout}" value="logout"/>
+        </h:form>
+    </ui:define>
+        </ui:composition>
+</html>

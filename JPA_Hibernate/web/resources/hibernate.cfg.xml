@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/payment</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password"></property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.max_fetch_depth">3</property>
+
+    <mapping class="main.Entities.Card"/>
+    <mapping class="main.Entities.DebitCard"/>
+    <mapping class="main.Entities.CreditCard"/>
+
+    <mapping class="main.UserController"/>
+    <mapping class="main.Adress.Address"/>
+    <mapping class="main.RecipientCardController"/>
+
+
+  </session-factory>
+</hibernate-configuration>

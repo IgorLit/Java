@@ -11,14 +11,20 @@
             <h:form>
                 <h:outputText value="Name:"/>
                 <h:outputText value="#{User.login}"/><br/>
+                <h:outputText value="E-Mail:"/>
+                <h:outputText value="#{User.email}"/><br/>
                 <h:outputText value="Card Number:"/>
                 <h:outputText value="#{User.card.number}"/><br/>
                 <h:outputText value="Amount:"/>
                 <h:outputText value="#{User.card.amount}"/><br/>
                 <h:outputText value="Card Expiry Date:"/>
                 <h:outputText value="#{User.card.cardExpiryDate}"/><br/>
-                <h:outputText value="User Address:"/>
-                <h:outputText value="#{User.address.country}"/><br/><br/>
+                <h:outputText value="City:"/>
+                <h:outputText value="#{User.address.city}"/><br/>
+                <h:outputText value="Street:"/>
+                <h:outputText value="#{User.address.street}"/><br/>
+                <h:outputText value="House Number:"/>
+                <h:outputText value="#{User.address.houseNumber}"/><br/><br/>
             </h:form>
             </h4>
            <h:form>
@@ -30,8 +36,10 @@
                 <br/><br/>
                 <h:outputText value="Enter Amount"/><br/>
                 <h:inputText value="#{User.recipient.amount}" required="true" title="pass" id="password"/><br/><br/>
-                <h:commandLink action="#{User.logout}" style="margin-left:30px" value="logout"/>
-                <h:commandButton action="#{User.pay}" value="PAY" style="margin-left: 20px"/><br/><br/><br/>
+                <h:commandButton action="#{User.pay}" value="PAY" style="margin-left: 65px"/>
+            </h:form>
+            <h:form>
+                <h:commandLink action="#{User.logout}" style="margin-left:65px" value="logout"/>
             </h:form>
         </ui:define>
 </ui:composition>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="WEB-INF/template.xhtml">
+        <ui:define name="content">
+            <h4>
+            <h:form>
+                <h:outputText value="Name:"/>
+                <h:outputText value="#{User.login}"/><br/>
+                <h:outputText value="E-Mail:"/>
+                <h:outputText value="#{User.email}"/><br/>
+                <h:outputText value="Card Number:"/>
+
+                <h:outputText value="City:"/>
+                <h:outputText value="#{User.address.city}"/><br/>
+                <h:outputText value="Street:"/>
+                <h:outputText value="#{User.address.street}"/><br/>
+                <h:outputText value="House Number:"/>
+                <h:outputText value="#{User.address.houseNumber}"/><br/><br/>
+                <h:outputText value="Cards:"/>
+                <h:dataTable value="#{User.debitCards}" var="debitcard">
+                    <h:column>
+                        <h:outputText value="Type: Debit,"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="Number "/>
+                        <h:outputText value="#{debitcard.number }" />
+                        <h:outputText value=", "/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="Amount "/>
+                        <h:outputText value="#{debitcard.amount}" />
+                    </h:column>
+                </h:dataTable><br/><br/>
+
+
+            </h:form>
+                <h:form>
+                    <h:selectOneListbox size="8" valueChangeListener="#{User.changedCard}" onchange="submit()">
+                        <f:selectItems value="#{User.debitCards}"/>
+                    </h:selectOneListbox><br/>
+
+                </h:form>
+        </h4>
+           <h:form>
+                <h:outputText value="Enter Recipient Card Number"/><br/>
+                <h:inputText value="#{User.recipient.number}" required="true"  title="id" id="cardId">
+                    <f:validator validatorId="CardValidator"/>
+                </h:inputText>
+                <h:message for="cardId" style="color: red"/>
+                <br/><br/>
+                <h:outputText value="Enter Amount"/><br/>
+                <h:inputText value="#{User.recipient.amount}" required="true" title="pass" id="password"/><br/><br/>
+                <h:commandButton action="#{User.pay}" value="PAY" style="margin-left: 65px"/>
+            </h:form>
+            <h:form>
+                <h:commandLink action="#{User.logout}" style="margin-left:65px" value="logout"/>
+            </h:form>
+
+        </ui:define>
+</ui:composition>
+</html>
