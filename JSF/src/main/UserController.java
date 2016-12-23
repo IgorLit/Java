@@ -29,7 +29,7 @@ public class UserController {
 
 
     public String signIn(){
-        if(this.login.equals("root")&& this.password==666) {
+        if(this.login.equals("igor")&& this.password==111) {
             this.initCard();
             this.setAuthorized(true);
             return "bank?faces-redirect=true";
@@ -38,7 +38,7 @@ public class UserController {
             return "false";
     }
     private void initCard(){
-        this.card.setAmount(1000);
+        this.card.setAmount(10000);
         this.card.setCardExpiryDate("10.01.2017");
         this.card.setNumber(6662628);
     }

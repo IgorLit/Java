@@ -22,11 +22,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="lab2" />
+        <module name="JarModule" />
+        <module name="WebApp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="lab2" target="1.7" />
+      <module name="JarModule" target="1.5" />
+      <module name="MultiModuleProject" target="1.5" />
+      <module name="WebApp" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

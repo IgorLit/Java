@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lab2.iml" filepath="$PROJECT_DIR$/lab2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JarModule/JarModule.iml" filepath="$PROJECT_DIR$/JarModule/JarModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiModuleProject.iml" filepath="$PROJECT_DIR$/MultiModuleProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebApp/WebApp.iml" filepath="$PROJECT_DIR$/WebApp/WebApp.iml" />
     </modules>
   </component>
 </project>
